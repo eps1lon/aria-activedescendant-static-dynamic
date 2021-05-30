@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+}
+
+p {
+  max-width: 80ch;
+}
+
+ul[role="listbox"] {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+}
+
+*[role="listbox"]:focus {
+  outline: 1px solid black;
+}
+
+*[role="listbox"]:focus-visible {
+  outline: 2px solid black;
+}
+
+*[role="listbox"]:focus *[role="option"][aria-selected="true"] {
+  outline: 2px dashed black;
+}
