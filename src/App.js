@@ -304,16 +304,33 @@ export default function App() {
         </thead>
         <tbody>
           <tr>
+            <td>MacOS</td>
+            <td>10.15.7 (19H1030)</td>
+          </tr>
+          <tr>
             <td>VoiceOver</td>
             <td>??</td>
           </tr>
           <tr>
             <td>Safari</td>
-            <td>??</td>
+            <td>14.0.3 (15610.4.3.1.7, 15610)</td>
           </tr>
         </tbody>
       </table>
-      <SpeechResults speech={[]} />
+      <SpeechResults
+        speechDynamic={[
+          "entering dynamic aria-activedescendant listbox, alpha, text (1 of 5)",
+          "beta, text (2 of 5)",
+          "gamma, text (3 of 5)",
+          "beta, text (2 of 5)"
+        ]}
+        speechStatic={[
+          "entering dynamic aria-activedescendant listbox, alpha, text (1 of 5)",
+          "beta, text (2 of 5)",
+          "gamma, text (3 of 5)",
+          "beta, text (2 of 5)"
+        ]}
+      />
     </div>
   );
 }
