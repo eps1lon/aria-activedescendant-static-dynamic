@@ -192,7 +192,7 @@ export default function App() {
         <code>option</code> takes that <code>id</code> i.e. <code>id</code> of{" "}
         <code>option</code> is dynamic.
       </p>
-      <StaticAriaActiveDescendantListobx aria-labelledby={dynamicID} />
+      <StaticAriaActiveDescendantListobx aria-labelledby={staticID} />
       <h2>results</h2>
       <p>
         All experiments were performed on{" "}
@@ -225,11 +225,28 @@ export default function App() {
           </tr>
           <tr>
             <td>Firefox</td>
-            <td>??</td>
+            <td>88.0.1</td>
           </tr>
         </tbody>
       </table>
-      <SpeechResults speech={[]} />
+      <SpeechResults
+        speechDynamic={[
+          "'dynamic aria-activedescendant  list', 'alpha  1 of 5'",
+          "'beta  2 of 5'",
+          "'gamma  3 of 5'",
+          "'beta  2 of 5'",
+          "'alpha  1 of 5'",
+          "'epsilon  5 of 5'"
+        ]}
+        speechStatic={[
+          "'static aria-activedescendant  list', 'alpha  1 of 5'",
+          "'beta  2 of 5'",
+          "'gamma  3 of 5'",
+          "'beta  2 of 5'",
+          "'alpha  1 of 5'",
+          "'epsilon  5 of 5'"
+        ]}
+      />
       <h3>JAWS + Chrome</h3>
       <table>
         <caption>environment</caption>
@@ -276,52 +293,99 @@ export default function App() {
   );
 }
 
-function SpeechResults({ speech = [] }) {
+function SpeechResults({ speechDynamic = [], speechStatic = [] }) {
   return (
-    <table>
-      <caption>recorded speech</caption>
-      <thead>
-        <tr>
-          <th>Action</th>
-          <th>Speech</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Press tab</td>
-          <td>{speech[0] ?? "??"}</td>
-        </tr>
-        <tr>
-          <td>
-            Press <kbd>ArrowDown</kbd>
-          </td>
-          <td>{speech[1] ?? "??"}</td>
-        </tr>
-        <tr>
-          <td>
-            Press <kbd>ArrowDown</kbd>
-          </td>
-          <td>{speech[2] ?? "??"}</td>
-        </tr>
-        <tr>
-          <td>
-            Press <kbd>ArrowUp</kbd>
-          </td>
-          <td>{speech[3] ?? "??"}</td>
-        </tr>
-        <tr>
-          <td>
-            Press <kbd>Home</kbd>
-          </td>
-          <td>{speech[4] ?? "??"}</td>
-        </tr>
-        <tr>
-          <td>
-            Press <kbd>End</kbd>
-          </td>
-          <td>{speech[5] ?? "??"}</td>
-        </tr>
-      </tbody>
-    </table>
+    <Fragment>
+      <table>
+        <caption>recording for dynamic aria-activedescendant</caption>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Speech</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Press tab</td>
+            <td>{speechDynamic[0] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowDown</kbd>
+            </td>
+            <td>{speechDynamic[1] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowDown</kbd>
+            </td>
+            <td>{speechDynamic[2] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowUp</kbd>
+            </td>
+            <td>{speechDynamic[3] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>Home</kbd>
+            </td>
+            <td>{speechDynamic[4] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>End</kbd>
+            </td>
+            <td>{speechDynamic[5] ?? "??"}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>recording for static aria-activedescendant</caption>
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Speech</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Press tab</td>
+            <td>{speechStatic[0] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowDown</kbd>
+            </td>
+            <td>{speechStatic[1] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowDown</kbd>
+            </td>
+            <td>{speechStatic[2] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>ArrowUp</kbd>
+            </td>
+            <td>{speechStatic[3] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>Home</kbd>
+            </td>
+            <td>{speechStatic[4] ?? "??"}</td>
+          </tr>
+          <tr>
+            <td>
+              Press <kbd>End</kbd>
+            </td>
+            <td>{speechStatic[5] ?? "??"}</td>
+          </tr>
+        </tbody>
+      </table>
+    </Fragment>
   );
 }
