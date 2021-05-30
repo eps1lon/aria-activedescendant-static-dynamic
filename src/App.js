@@ -258,16 +258,37 @@ export default function App() {
         </thead>
         <tbody>
           <tr>
+            <td>Windows</td>
+            <td>Version 10.0.15063 Build 15063</td>
+          </tr>
+          <tr>
             <td>JAWS</td>
-            <td>??</td>
+            <td>2019.1909.28</td>
           </tr>
           <tr>
             <td>Chrome</td>
-            <td>??</td>
+            <td>91.0.4472.77</td>
           </tr>
         </tbody>
       </table>
-      <SpeechResults speech={[]} />
+      <SpeechResults
+        speechDynamic={[
+          "dynamic aria-activedescendant listbox alpha 1 of 5",
+          "beta 2 of 5",
+          "gamma 3 of 5",
+          "beta 2 of 5",
+          "alpha 1 of 5",
+          "epsilon 5 of 5"
+        ]}
+        speechStatic={[
+          "static aria-activedescendant listbox alpha 1 of 5",
+          "beta 2 of 5",
+          "gamma 3 of 5",
+          "beta 2 of 5",
+          "alpha 1 of 5",
+          "epsilon 5 of 5"
+        ]}
+      />
       <h3>VoiceOver + Safari</h3>
       <table>
         <caption>environment</caption>
