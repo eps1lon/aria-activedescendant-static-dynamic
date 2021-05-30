@@ -220,6 +220,10 @@ export default function App() {
         </thead>
         <tbody>
           <tr>
+            <td>Windows</td>
+            <td>Version 10.0.19041 Build 19041</td>
+          </tr>
+          <tr>
             <td>NVDA</td>
             <td>2020.04</td>
           </tr>
